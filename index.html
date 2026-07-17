@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orchid A+ — Data Driven. Future Focused. Results Delivered.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg:#00060F;
+    --bg-soft:#050E1C;
+    --panel:#081527;
+    --line: rgba(120,170,220,0.16);
+    --ink:#EAF1F8;
+    --ink-dim:#8FA3B8;
+    --blue-deep:#005097;
+    --blue:#0970C7;
+    --blue-bright:#30C5FB;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(9,112,199,0.16), transparent 45%),
+      radial-gradient(ellipse at 85% 15%, rgba(48,197,251,0.10), transparent 40%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+  }
+
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+
+  .accent{ color:var(--blue-bright); }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(0,6,15,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:40px; width:auto; display:block; }
+  .brand .wordmark{ font-size:1.2rem; font-weight:600; }
+  .brand .wordmark .plus{ color:var(--blue-bright); }
+
+  .navlinks{ display:flex; gap:32px; font-size:0.92rem; }
+  .navlinks a{ opacity:0.75; transition:opacity 0.2s; }
+  .navlinks a:hover{ opacity:1; color:var(--blue-bright); }
+
+  /* HERO BANNER */
+  .hero-banner{
+    border-bottom:1px solid var(--line);
+    background:var(--bg-soft);
+  }
+  .hero-banner img{
+    width:100%;
+    display:block;
+  }
+
+  .hero-tagline{
+    text-align:center;
+    padding:22px 0 34px;
+    font-size:0.95rem;
+    letter-spacing:0.06em;
+    color:var(--ink-dim);
+  }
+  .hero-tagline b{ color:var(--ink); font-weight:600; }
+  .hero-tagline .accent{ font-weight:600; }
+
+  /* SECTIONS */
+  .section{ padding:64px 0; border-top:1px solid var(--line); }
+  .section-head{ max-width:60ch; margin:0 auto 44px; text-align:center; }
+  .section-head .eyebrow{
+    font-size:0.75rem; text-transform:uppercase; color:var(--blue-bright); margin-bottom:12px; display:inline-block;
+  }
+  .section-head h2{ font-size:clamp(1.6rem, 3.2vw, 2.1rem); }
+  .section-head p{ color:var(--ink-dim); margin-top:12px; }
+
+  /* PRODUCT CARDS */
+  .cards{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media (max-width:760px){ .cards{ grid-template-columns:1fr; } }
+
+  .card{
+    background:linear-gradient(180deg, var(--panel), rgba(8,21,39,0.6));
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:32px;
+    display:flex; flex-direction:column; gap:16px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover{ border-color:rgba(48,197,251,0.4); transform:translateY(-2px); }
+
+  .card .tag{
+    font-size:0.7rem; text-transform:uppercase; padding:5px 12px;
+    border-radius:20px; width:fit-content; letter-spacing:0.04em;
+  }
+  .tag-free{ background:rgba(48,197,251,0.14); color:var(--blue-bright); border:1px solid rgba(48,197,251,0.3); }
+  .tag-game{ background:rgba(9,112,199,0.2); color:#7FC4F5; border:1px solid rgba(9,112,199,0.4); }
+
+  .card h3{ font-size:1.4rem; }
+  .card p.desc{ color:var(--ink-dim); font-size:0.94rem; }
+
+  .card ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .card ul li{ font-size:0.87rem; color:var(--ink-dim); padding-left:18px; position:relative; }
+  .card ul li::before{
+    content:"◆"; position:absolute; left:0; top:0; font-size:0.6rem; color:var(--blue-bright); opacity:0.8;
+  }
+
+  .card .card-cta{ margin-top:auto; padding-top:8px; }
+  .btn{
+    display:inline-block; padding:12px 24px; border-radius:6px;
+    font-size:0.92rem; font-weight:500; transition:all 0.18s ease;
+  }
+  .btn-primary{ background:linear-gradient(135deg, var(--blue), var(--blue-bright)); color:#00121F; }
+  .btn-primary:hover{ filter:brightness(1.1); transform:translateY(-1px); }
+
+  /* STATS */
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:760px){ .stats{ grid-template-columns:1fr; } }
+  .stat{
+    border:1px solid var(--line); border-radius:8px; padding:24px; text-align:center;
+    background:rgba(8,21,39,0.4);
+  }
+  .stat .num{ font-family:'IBM Plex Mono', monospace; font-size:1.9rem; color:var(--blue-bright); }
+  .stat .label{ color:var(--ink-dim); font-size:0.84rem; margin-top:6px; }
+
+  /* DISCLAIMER */
+  .disclaimer{
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:36px 0;
+  }
+  .disclaimer .wrap{ display:flex; gap:18px; align-items:flex-start; }
+  .disclaimer .mark{
+    font-family:'Poppins', sans-serif; font-size:1.3rem; color:var(--blue-bright); flex-shrink:0;
+  }
+  .disclaimer p{ font-size:0.9rem; color:var(--ink-dim); max-width:74ch; }
+  .disclaimer strong{ color:var(--ink); }
+
+  /* FOOTER */
+  footer{ padding:36px 0 56px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer .foot-links{ display:flex; gap:22px; font-size:0.84rem; color:var(--ink-dim); }
+  footer .copy{ font-size:0.78rem; color:var(--ink-dim); opacity:0.7; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo-mark.png" alt="Orchid A+ logo">
+      <div class="wordmark">Orchid <span class="plus">A+</span></div>
+    </div>
+    <div class="navlinks">
+      <a href="#health-check">Health Check</a>
+      <a href="#risk-rewind">Risk Rewind</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="assets/brand-banner.png" alt="Orchid A+ — Data Driven. Future Focused. Results Delivered.">
+  <p class="hero-tagline wrap">
+    <b>Two tools built on the same model:</b> a free <span class="accent">Health Check</span> and a gamified <span class="accent">Risk Rewind</span> simulator.
+  </p>
+</div>
+
+<section class="section" id="health-check">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow mono">// our products</span>
+      <h2>Two tools, built for different moments</h2>
+      <p>Same underlying model, two different jobs. Use whichever fits what you're trying to do right now.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="tag tag-free">Free</span>
+        <h3>Health Check</h3>
+        <p class="desc">A straightforward risk-screening tool. Enter five numbers, get an estimated risk score and where it sits relative to others — no game, no fluff.</p>
+        <ul>
+          <li>Five inputs: age, blood pressure, glucose, smoking, sex</li>
+          <li>Instant risk score + percentile comparison</li>
+          <li>Plain-language explanation of what's driving your result</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn btn-primary" href="https://YOUR-HEALTH-APP-NAME.streamlit.app" target="_blank" rel="noopener">Open Health Check →</a>
+        </div>
+      </div>
+
+      <div class="card" id="risk-rewind">
+        <span class="tag tag-game">Game</span>
+        <h3>Risk Rewind</h3>
+        <p class="desc">A what-if simulator. Drag sliders toward healthier habits and watch your simulated risk score react live — earn badges as you go.</p>
+        <ul>
+          <li>Live "before vs. after" risk comparison</li>
+          <li>Badges for hitting healthy thresholds</li>
+          <li>Built to make the numbers behind healthy habits click</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn btn-primary" href="https://YOUR-GAME-APP-NAME.streamlit.app" target="_blank" rel="noopener">Play Risk Rewind →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow mono">// the data</span>
+      <h2>Where the numbers come from</h2>
+      <p>Built on a public, Framingham-style cardiovascular dataset, with the model narrowed to the five factors that carried real signal — age, systolic blood pressure, glucose, smoking, and sex — after systematic testing against the rest.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num mono">~4,200</div>
+        <div class="label">patient records the model is trained on</div>
+      </div>
+      <div class="stat">
+        <div class="num mono">5 of 15</div>
+        <div class="label">features shown to carry real predictive signal</div>
+      </div>
+      <div class="stat">
+        <div class="num mono">2x</div>
+        <div class="label">lift over random guessing at separating risk levels</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <div class="wrap">
+    <div class="mark">!</div>
+    <p><strong>Not a diagnosis.</strong> Orchid A+'s Health Check and Risk Rewind estimate relative risk from a small set of factors and do not know your medical history, medications, or family history. They are educational tools, not medical devices, and do not replace a conversation with a doctor. If you or someone else is experiencing stroke symptoms — sudden numbness, confusion, trouble speaking or seeing, severe headache, loss of balance — call emergency services immediately.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="copy mono">© Orchid A+ — for Digital solutions and services</div>
+    <div class="foot-links">
+      <a href="#health-check">Health Check</a>
+      <a href="#risk-rewind">Risk Rewind</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
