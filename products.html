@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,10 +52,14 @@
   .brand .wordmark{ font-size:1.2rem; font-weight:600; }
   .brand .wordmark .plus{ color:var(--blue-bright); }
 
-  .navlinks{ display:flex; gap:32px; font-size:0.92rem; }
+  .navlinks{ display:flex; gap:26px; font-size:0.9rem; align-items:center; flex-wrap:wrap; }
   .navlinks a{ opacity:0.75; transition:opacity 0.2s; }
   .navlinks a:hover{ opacity:1; color:var(--blue-bright); }
   .navlinks a.active{ opacity:1; color:var(--blue-bright); }
+  .navlinks .signin-btn{
+    padding:8px 18px; border-radius:6px; opacity:1;
+    background:linear-gradient(135deg, var(--blue), var(--blue-bright)); color:#00121F; font-weight:500;
+  }
 
   /* PAGE HEADER */
   .page-head{
@@ -143,7 +148,11 @@
     <div class="navlinks">
       <a href="index.html">Home</a>
       <a href="products.html" class="active">Our Products</a>
-      <a href="index.html#about">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="ai-creations.html">AI Creations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="signin.html" class="signin-btn">Sign In</a>
     </div>
   </div>
 </nav>
@@ -171,7 +180,7 @@
           <li>Plain-language explanation of your result</li>
         </ul>
         <div class="card-cta">
-          <a class="btn btn-primary" href="https://healthcheckerbyorchidaplus.streamlit.app" target="_blank" rel="noopener">Open Health Check →</a>
+          <a class="btn btn-primary" href="https://YOUR-HEALTH-APP-NAME.streamlit.app" target="_blank" rel="noopener">Open Health Check →</a>
         </div>
       </div>
 
@@ -185,7 +194,7 @@
           <li>Built to make healthy habits click</li>
         </ul>
         <div class="card-cta">
-          <a class="btn btn-primary" href="https://3h6sinaghhxfn4mwsfkoa4.streamlit.app/" target="_blank" rel="noopener">Play Risk Rewind →</a>
+          <a class="btn btn-primary" href="https://YOUR-GAME-APP-NAME.streamlit.app" target="_blank" rel="noopener">Play Risk Rewind →</a>
         </div>
       </div>
 
@@ -235,7 +244,7 @@
     <div class="copy mono">© Orchid A+ — for Digital solutions and services</div>
     <div class="foot-links">
       <a href="index.html">Home</a>
-      <a href="products.html">Apps</a>
+      <a href="products.html">Our Products</a>
     </div>
   </div>
 </footer>
