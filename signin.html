@@ -205,8 +205,8 @@
     btn.disabled = false;
     const msg = document.getElementById('siMsg');
     if (error) { showMsg(msg, error.message, 'error'); }
-    else { showMsg(msg, 'Signed in!', 'success'); refreshAuthView(); }
-  });
+    else { showMsg(msg, 'Signed in! Redirecting…', 'success'); setTimeout(() => { window.location.href = 'index.html'; }, 800);
+});
 
   document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     e.preventDefault();
